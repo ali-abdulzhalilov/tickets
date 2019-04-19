@@ -1,0 +1,2 @@
+FLASK_APP=tickets.py
+FLASK_ENV=development
