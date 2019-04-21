@@ -3,8 +3,8 @@
 		<td>
 		{% if ticket.title %}
 			{{ ticket.title }}
-		{% elif ticket.body|length > 5 %}
-			{{ ticket.body[:5] }}...
+		{% elif ticket.body|length > 20 %}
+			{{ ticket.body[:20] }}...
 		{% else %}
 			{{ ticket.body }}
 		{% endif %}
