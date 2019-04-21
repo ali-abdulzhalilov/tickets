@@ -22,3 +22,9 @@ def create():
 		return redirect(url_for('main.index'))
 		
 	return render_template('create.html', title='New Ticket', form=form)
+	
+@bp.route('/view/<int:id>', methods=['GET'])
+def view(id):
+	ticket = Ticket.query.filter_by(id=id).first_or_404()
+	return render_template('view.html', ticket=ticket)
+	

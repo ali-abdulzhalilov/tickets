@@ -1,18 +1,24 @@
 <table style="border: 1px solid">
 	<tr>
 		<td>
-		{% if ticket.title %}
-			{{ ticket.title }}
-		{% elif ticket.body|length > 20 %}
-			{{ ticket.body[:20] }}...
-		{% else %}
-			{{ ticket.body }}
-		{% endif %}
+			<a href="{{ url_for('main.view', id=ticket.id) }}">
+			{% if ticket.title %}
+				{{ ticket.title }}
+			{% elif ticket.body|length > 20 %}
+				{{ ticket.body[:20] }}...
+			{% else %}
+				{{ ticket.body }}
+			{% endif %}
+			</a>
 		</td>
 	</tr>
 	<tr>
 		<td>
+			{% if ticket.author %}
 			<strong>{{ ticket.author }}</strong>:
+			{% else %}
+			<strong>Somebody</strong>:
+			{% endif %}
 		</td>
 		<td>
 			{{ ticket.body }}

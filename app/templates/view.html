@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<a href="{{ url_for('main.index') }}">Back</a>
+	<h1>Ticket #{{ ticket.id }}</h1>
+	<table style="border: 1px solid">
+		{% if ticket.title %}
+		<tr>
+			<td>Title:</td><td>{{ ticket.title }}</td>
+		</tr>
+		{% endif %}
+		{% if ticket.author %}
+		<tr>
+			<td>Author:</td><td>{{ ticket.author }}</td>
+		</tr>
+		{% endif %}
+		<tr>
+			<td>Description:</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				{{ ticket.body }}
+			</td>
+		</tr>
+	</table>
+{% endblock %}
