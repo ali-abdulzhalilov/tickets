@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Hello, World</h1>
+	<h1>Tickets</h1>
+	<a href="{{ url_for('main.create') }}">New Ticket</a>
 	{% for ticket in tickets %}
 		{% include '_ticket.html' %}
 	{% endfor %}
